@@ -1,0 +1,15 @@
+<table style="width:50%">
+  <tr>
+    <th>Todo </th>
+    <th>Completed</th>
+    <th>Created at</th>
+  </tr>
+  <tr>
+    <td> <%= @todo.description %> </td>
+    <td> <%= "Yes" if @todo.completed %>
+          <%= "No" if @todo.completed == false %>
+     </td>
+    <td> <%= time_ago_in_words @todo.created_at %> </td>
+  </tr>
+
+</table>
