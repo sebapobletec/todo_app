@@ -1,0 +1,5 @@
+<%= form_with model: @todo, local: true do |f| %>
+<%= label_tag(:description, "What do you have to do?") %>
+<%= f.text_field :description %>
+<%= f.submit "Send" %>
+<% end%>
