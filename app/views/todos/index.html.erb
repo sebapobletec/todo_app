@@ -1,4 +1,4 @@
-<table style="width:50%">
+<table style="width:70%">
   <tr>
     <th>Todo </th>
     <th>Actions</th>
@@ -10,6 +10,7 @@
     <td> <%= link_to 'Show', todo_path(todo.id) %> </td>
     <td> <%= link_to 'Edit', todo_edit_path(todo.id) %> </td>
     <td> <%= link_to 'Destroy', todo, method: :delete %> </td>
+    <td> <%= link_to 'Complete', todo_complete_path(todo.id) %> </td>
   </tr>
 <% end %>
 </table>
