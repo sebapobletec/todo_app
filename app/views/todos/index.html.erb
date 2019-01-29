@@ -1,6 +1,7 @@
 <h1>Index</h1>
 <% @todos.each do |todo| %>
 <div class="well">todo</div>
+<%= todo.description %>
 <% end %>
 
 <%= link_to 'New Todo', todos_new_path %>
