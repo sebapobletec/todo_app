@@ -1,4 +1,7 @@
 class TodosController < ApplicationController
+
+  layout 'application'
+
   def index
     @todos = Todo.all
   end
@@ -14,6 +17,11 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
+  def list
+    @todos = Todo.all
+  end
+
+
   def show
     @todo = Todo.find(params[:id])
   end
@@ -24,7 +32,9 @@ class TodosController < ApplicationController
 
   def update
     @todo = Todo.find(params[:id])
+    @todo.completed = false
     @todo.update(todo_params)
+
     redirect_to todos_path
   end
 
@@ -39,10 +49,6 @@ class TodosController < ApplicationController
     @todo.completed = true
     @todo.save
     redirect_to todos_path
-  end
-
-  def list
-    @todos = Todo.all
   end
 
   private
