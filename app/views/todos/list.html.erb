@@ -1,25 +1,13 @@
 <div class="col-md-6 col-xs-6">
-  <table>
-    <tr>
-      <th>Todos Not Completed </th>
-    <tr>
+  <h2>Todos Not Completed</h2>
     <% @todosnotcompleted.each do |todo| %>
-    <tr class="well">
-      <td > <%= todo.description %> </td>
-    </tr>
+    <p class="well"> <%= todo.description %> </p>
     <% end %>
-  </table>
 </div>
 
 <div class="col-md-6 col-xs-6">
-  <table>
-    <tr>
-      <th>Todos Completed </th>
-    <tr>
-      <% @todoscompleted.each do |todo| %>
-    <tr class="well">
-      <td> <%= todo.description %> </td>
-    </tr>
+  <h2>Todos Completed</h2>
+    <% @todoscompleted.each do |todo| %>
+    <p class="well"> <%= todo.description %> </p>
     <% end %>
-  </table>
 </div>

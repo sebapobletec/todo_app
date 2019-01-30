@@ -1,15 +1,15 @@
-<table>
-  <tr>
-    <th>Todo </th>
-    <th>Completed</th>
-    <th>Created at</th>
-  </tr>
-  <tr>
-    <td> <%= @todo.description %> </td>
-    <td> <%= "Yes" if @todo.completed %>
-          <%= "No" if @todo.completed == false %>
-     </td>
-    <td> <%= time_ago_in_words @todo.created_at %> </td>
-  </tr>
+<div class="jumbotron">
 
-</table>
+  <div class="col-md-2">
+    <p><b>Todo: </b><%= @todo.description %> </p>
+  </div>
+
+  <div class="col-md-2">
+    <p><b>Completed: </b><%= "Yes" if @todo.completed %> <%= "No" if @todo.completed == false %> </p>
+  </div>
+
+  <div class="col-md-2">
+    <p><b>Created: </b><%= time_ago_in_words @todo.created_at %></p>
+  </div>
+
+</div>
