@@ -19,8 +19,9 @@ class TodosController < ApplicationController
 
   def list
     @todos = Todo.all
+    @todoscompleted = Todo.where(completed: true)
+    @todosnotcompleted = Todo.where(completed: false)
   end
-
 
   def show
     @todo = Todo.find(params[:id])

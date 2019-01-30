@@ -1,32 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <table>
-        <tr>
-          <th>Todos Not Completed </th>
-        <tr>
+<div class="col-md-6 col-xs-6">
+  <table>
+    <tr>
+      <th>Todos Not Completed </th>
+    <tr>
+    <% @todosnotcompleted.each do |todo| %>
+    <tr class="well">
+      <td > <%= todo.description %> </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
 
-      <% @todos.each do |todo| %>
-        <tr>
-          <td> <%= todo.description if todo.completed == false%> </td>
-        </tr>
-      <% end %>
-      </table>
-
-    </div>
-    <div class="col">
-      <table>
-        <tr>
-          <th>Todos Completed </th>
-        <tr>
-
-      <% @todos.each do |todo| %>
-        <tr>
-          <td> <%= todo.description if todo.completed == true%> </td>
-        </tr>
-      <% end %>
-      </table>
-
-    </div>
-  </div>
+<div class="col-md-6 col-xs-6">
+  <table>
+    <tr>
+      <th>Todos Completed </th>
+    <tr>
+      <% @todoscompleted.each do |todo| %>
+    <tr class="well">
+      <td> <%= todo.description %> </td>
+    </tr>
+    <% end %>
+  </table>
 </div>

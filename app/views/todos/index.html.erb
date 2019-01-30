@@ -1,22 +1,18 @@
-<table style="width:80%">
+<table>
   <tr>
-    <th>Todo </th>
-    <th>Actions</th>
+    <th><h2> Todo </h2></th>
   <tr>
 
-<div >
-
-
-<% @todos.each do |todo| %>
-  <tr>
-    <td class="card"> <%= todo.description %> </td>
-    <td> <%= link_to 'Show', todo_path(todo.id) %> </td>
-    <td> <%= link_to 'Edit', todo_edit_path(todo.id) %> </td>
-    <td> <%= link_to 'Destroy', todo, method: :delete %> </td>
-    <td> <%= link_to 'Complete', todo_complete_path(todo.id) %> </td>
+    <% @todos.each do |todo| %>
+  <tr class="well list-index">
+    <td > <%= todo.description %> </td>
+    <td class="btn btn-default"> <%= link_to 'Show', todo_path(todo.id) %> </td>
+    <td class="btn btn-default"> <%= link_to 'Edit', todo_edit_path(todo.id) %> </td>
+    <td class="btn btn-danger"> <%= link_to 'Destroy', todo, method: :delete %> </td>
+    <td class="btn btn-success"> <%= link_to 'Complete', todo_complete_path(todo.id) %> </td>
   </tr>
-<% end %>
-</div>
+  <% end %>
 </table>
+
 <br>
 <%= link_to 'New Todo', todos_new_path %>
