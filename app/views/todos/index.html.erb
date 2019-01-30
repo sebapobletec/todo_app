@@ -3,13 +3,13 @@
   <% @todos.each do |todo| %>
   <div class="well">
    <p><%= todo.description %>
-   <button class="btn btn-default btn-sm"> <%= link_to 'Show', todo_path(todo.id) %> </button>
-   <button class="btn btn-default btn-sm"> <%= link_to 'Edit', todo_edit_path(todo.id) %> </button>
-   <button class="btn btn-danger btn-sm"> <%= link_to 'Destroy', todo, method: :delete %> </button>
-   <button class="btn btn-success btn-sm"> <%= link_to 'Complete', todo_complete_path(todo.id) %> </button>
+   <%= link_to 'Show', todo_path(todo.id), class: "btn btn-default btn-sm" %>
+   <%= link_to 'Edit', todo_edit_path(todo.id), class: "btn btn-default btn-sm" %>
+   <%= link_to 'Destroy', todo, method: :delete, class: "btn btn-danger btn-sm" %>
+   <%= link_to 'Complete', todo_complete_path(todo.id), class: "btn btn-success btn-sm" %>
    </p>
   </div>
   <% end %>
 
 <br>
-<%= link_to 'New Todo', todos_new_path %>
+<%= link_to 'New Todo', todos_new_path, class: "btn btn-default" %>

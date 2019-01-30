@@ -5,7 +5,7 @@
   </div>
 
   <div class="col-md-2">
-    <p><b>Completed: </b><%= "Yes" if @todo.completed %> <%= "No" if @todo.completed == false %> </p>
+    <p><b>Completed: </b><%= completed_in_words(@todo) %></p>
   </div>
 
   <div class="col-md-2">
