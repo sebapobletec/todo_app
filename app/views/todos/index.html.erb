@@ -6,16 +6,21 @@
 
 <h2>These are the things you have to do!</h2>
 
+<div class="row">
+
+
   <% @todos.each do |todo| %>
-  <div class="well">
+  <div class="well col-md-5 index-list">
    <p><%= todo.description %>
    <%= link_to 'Complete', todo_complete_path(todo.id), class: "btn btn-success btn-sm button-right" %>
-   <%= link_to 'Destroy', todo, method: :delete, class: "btn btn-danger btn-sm button-right" %>
+   <%= link_to 'Delete', todo, method: :delete, class: "btn btn-danger btn-sm button-right" %>
    <%= link_to 'Edit', todo_edit_path(todo.id), class: "btn btn-default btn-sm button-right" %>
    <%= link_to 'Show', todo_path(todo.id), class: "btn btn-default btn-sm button-right" %>
    </p>
   </div>
   <% end %>
+
+</div>
 
 <br>
 <div><%= link_to 'New Todo', todos_new_path, class: "btn btn-default" %></div>

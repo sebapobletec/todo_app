@@ -1,7 +1,5 @@
 class TodosController < ApplicationController
 
-  layout 'application'
-
   def index
     @todos = Todo.all
   end
