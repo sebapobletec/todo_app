@@ -1,3 +1,9 @@
+<br>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+
 <h2>These are the things you have to do!</h2>
 
   <% @todos.each do |todo| %>
@@ -12,4 +18,4 @@
   <% end %>
 
 <br>
-<%= link_to 'New Todo', todos_new_path, class: "btn btn-default" %>
+<div><%= link_to 'New Todo', todos_new_path, class: "btn btn-default" %></div>

@@ -14,6 +14,11 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
     @todo.completed = false
     @todo.save
+    if @todo.save
+      flash[:info] = "You have created a new to-do."
+    else
+      flash[:danger] = "Error while creating the to-do."
+    end
     redirect_to todos_path
   end
 
@@ -35,13 +40,14 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.completed = false
     @todo.update(todo_params)
-
+    flash[:info] = "You have edited: #{@todo.description}."
     redirect_to todos_path
   end
 
   def destroy
     @todo = Todo.find(params[:id])
     @todo.destroy
+    flash[:danger] = "You have deleted: #{@todo.description}."
     redirect_to todos_path
   end
 
@@ -49,6 +55,7 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.completed = true
     @todo.save
+    flash[:success] = "You have completed: #{@todo.description}!"
     redirect_to todos_path
   end
 
